@@ -18,6 +18,7 @@ form.addEventListener("submit", (event) => {
     
     if (divider == 0) {
       result.innerText = 'Division not performed. Invalid number provided. Try again';
+      result.classList.add('error-message')
       throw new Error('Division not performed. Invalid number provided. Try again');
       
     }
