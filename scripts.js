@@ -20,12 +20,13 @@ form.addEventListener("submit", (event) => {
       throw new Error('Division not performed. Invalid number provided. Try again');
       
     }
+    //if(dividend == '' || divider == '')
     
     
   } catch (error) {
     
-    console.error('An error occurred:', error.message);
-    console.error('Call stack:', error.stack);
+    console.trace('An error occurred:', error);
+   
   }
 
     
