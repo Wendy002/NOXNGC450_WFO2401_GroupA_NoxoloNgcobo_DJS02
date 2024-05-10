@@ -10,9 +10,9 @@ form.addEventListener("submit", (event) => {
     const calculatedValue = Math.floor(dividend / divider);  // use math.floor to remove decimals
     if (dividend == '' || divider == ''){
 
-      result.innerText = 'Division not performed. Both values are required in inputs. Try again';
+      result.innerText = 'Division not performed. Both values are required in inputs. Try again'; //replace with this text if "true"
     } else{
-      result.innerText = calculatedValue;
+      result.innerText = calculatedValue; // else this if "false"
     }
   
     if (divider == 0) {
@@ -20,12 +20,15 @@ form.addEventListener("submit", (event) => {
       throw new Error('Division not performed. Invalid number provided. Try again');
       
     }
-    //if(dividend == '' || divider == '')
+    if(isNaN(dividend) || isNaN(divider)){ // Check if values are numbers or not 
+       document.body.innerText= "Something critical went wrong. Please reload the page"; // crash the site
+       throw new Error('Something critical went wrong. Please reload the page'); // throw error
+    }
     
     
   } catch (error) {
     
-    console.trace('An error occurred:', error);
+    console.trace('An error occurred:', error); // traces call stack
    
   }
 
