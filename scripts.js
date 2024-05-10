@@ -23,7 +23,7 @@ form.addEventListener("submit", (event) => {
     }
     if(isNaN(dividend) || isNaN(divider)){ // Check if values are numbers or not 
        document.body.innerHTML= `Something critical went wrong. Please reload the page`; // crash the site
-
+       document.body.classList.add('critical-error')
        throw new Error('Something critical went wrong. Please reload the page'); // throw error
     }
     
